@@ -1,0 +1,6 @@
+for u in $(cat url) ; do
+  cd /short/dx2/gay548/MelbourneDatathon2018/${u%/*}
+  pwd
+  wget https://melb-datathon.s3.ap-southeast-2.amazonaws.com/${u}
+done
+
