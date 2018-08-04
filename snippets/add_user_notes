@@ -1,0 +1,38 @@
+# Login in to the AWS instance
+```
+ssh -i ~/.ssh/griff_aws_rsa griff@52.62.199.168
+```
+
+# As root add the new user
+```
+NEW_USER=????
+useradd -m ${NEW_USER}
+usermod -aG sudo -s /bin/bash ${NEW_USER}
+```
+
+# As the user make them a SSH key
+```
+sudo -u ${NEW_USER} -i
+
+ssh-keygen
+```
+
+# Move the public key to the authorized_keys file
+```
+cd .ssh
+mv id_rsa.pub authorized_keys
+```
+
+# Copy the private key to a location that can be accessed by the new user
+```
+scp -P 20022 id_rsa adamyoun@adamyoung.in:public_html/gryffydd.com/${NEW_USER}
+```
+
+Make sure that the file can be served...
+```
+chmod 644 ${NEW_USER}
+```
+
+Note: `${NEW_USER}` will not have been set on the target machine, so use your
+intelligence here.
+
