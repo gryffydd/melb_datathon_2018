@@ -14,16 +14,16 @@ CREATE TABLE calendar (
        FinancialWeek smallint NOT NULL,
        DayType text NOT NULL,
        DayTypeCategory text NOT NULL,
-       WeekDay text NOT NULL,
+       WeekDayType text NOT NULL,
        WeekdaySeq smallint NOT NULL,
-       WeekDay1 text NOT NULL,
+       WeekDayName text NOT NULL,
        FinancialMonthSeq integer NOT NULL,
        FinancialMonthName text NOT NULL,
        MonthNumber smallint NOT NULL,
        ABSWeek integer NOT NULL,
        WeekEnding text NOT NULL,
        QuarterName text NOT NULL
-); 
+);
 
 \COPY calendar FROM 'MD2018/data/calendar.txt' delimiter '|' csv;
 
