@@ -27,3 +27,5 @@ CREATE TABLE calendar (
 
 \COPY calendar FROM 'MD2018/data/calendar.txt' delimiter '|' csv;
 
+\COPY calendar FROM '/home/ubuntu/melbdatathon_2018/calendar.txt' delimiter '|' csv;
+
